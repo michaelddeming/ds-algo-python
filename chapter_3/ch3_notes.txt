@@ -1,0 +1,121 @@
+Data Structures and Algorithms in Python
+
+Chapter 3: Algorithm Analysis
+
+Defintions:
+
+Data Structure: a systematic way of organizing and accessing data.
+Algorithm: a step-by-step procedure for performing some task in a finite amount of time.
+Running Time: a natural measure of "goodness," computer solutions should run as fast as possible. 
+Space Usage: 
+Epoch: a benchmark time start for an algorithm.
+Primitive Operations: the most basic actions a computer can perform during a promgram's execution.
+    - Examples: Math, Comparisons, Data Access, Control Flow (looping), function calls. 
+Ceiling: rounding up of to the nearest whole number. 
+    - Example: 0.2 --> 1 , 0.7 --> 1
+3.1 Experimental Studies
+
+Time Module: records and can return the relapsed time between the epoch time. 
+    - time() takes a "time stamp" during the programs run time.
+        - Not a perfect way to measure algorithm runtime, because the elapsed time depends on/is affected by what other processes are running on the computer when the test is performed.
+    - clock() measures thh number of CPU cycles that are used by an algorithm.
+        - Depends on the CPU (hardware) of the user.
+
+TimeIt Module: can automate time evaluations with repetition to account for variance among trials. 
+
+Counting Primitive Operations: we can count the number of primitive operations, t, and measure the runtime of the algorithm.
+    - f(n) characterzed the number of primitive operations that are performed as a function of the input size, n. 
+
+Wost Case Scenario: The slowest observed runtimes of the algorithm, used as the base level for improvement.
+    - Always consider worst case scenario when optimizing an algorithm, since this consideration leads to a greater focus on minimizing the total number of operations needed. 
+
+3.2 The Seven Functions Used in This Book
+
+1. Constant Function: f(n) = c 
+
+    Functions that are independent of input size. No matter the size of the input the functions will return or results some value, c. 
+        - Example: c=5, f(n) = 5, output will always be 5. 
+
+2. Logarithm Function: x = log_b(n) , for constant b > 1
+
+    b = base , most common base for CS is b=2 (binary)
+    by convention for CS, log(n) = log_2(n) --> different from most calculators w/ log_10
+        - Example: log_3(n) = 27 --> 3^n = 27 --> How many times can we divide n by 3? 27
+
+3. Linear Function: f(n) = n 
+
+    Function that when given an input value n, the linear function f assigns the value n itself. The linear function also represents the best running time we can hope to achieve for any algorithm that processes each of n objects that are not already in the computer’s memory, because reading in the n objects already requires n operations.
+
+4. N-Log-N Function: f(n) = nlog_2(n)
+
+    Function that assigns to an input n the value of n time the log_2(n). 
+
+
+
+5. Quadratic Function: f(n) = n^2
+
+    Function that when given an input value of n, the function f assigns the product of n with itself, f(n) = n * n. Algorithms that have nested loops, where the inner loop performs a linear number of operations and the outer loop is performed a linear number of times.
+        - Example: for i in range(n):
+                        for j in range(n):
+
+6. Cubic Function and Other Polynomials: f(n) = n^3
+
+    Function which assigns to an input value n the product of n with itself three times, f(n) = n * n * n
+
+Polynomials 
+
+Summations
+
+7. Exponential Function: f(n) = b^n 
+
+    Function where b (base) is a positive constant and n is the exponent. Most common base, b, for exponential algorithm analysis is b = 2. 
+
+Geometric Sums
+
+3.3 Asymptotic Analysis (Growth Rate)
+
+    In Big O or Big Omega analysis, we’re concerned with how functions grow relative to each other as n becomes arbitrarily large.
+
+"Big-Oh" Notation: f(n) <= c * g(n), for n >= n_0 
+
+    Describes the upper bound or the 
+
+"Big-Omega" Notation: f(n) >= c*g(n), for n >= n_0
+
+    Describes the lower bound or the minimum growth rate of a function. 
+
+"Big-Theta" Notation: c'g(n) ≤ f(n) ≤ c''g(n), for n ≥ n_0
+
+
+
+
+array = [2,4,6,6,8]
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

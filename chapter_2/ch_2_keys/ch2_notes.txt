@@ -1,0 +1,8 @@
+Definitions:
+
+__slots__:
+    - dynamic dispatch:
+    - static dispatch:
+    - alias:
+    - shallow copy:
+    - deep copy:
