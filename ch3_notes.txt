@@ -13,12 +13,15 @@ Primitive Operations: the most basic actions a computer can perform during a pro
     - Examples: Math, Comparisons, Data Access, Control Flow (looping), function calls. 
 Ceiling: rounding up of to the nearest whole number. 
     - Example: 0.2 --> 1 , 0.7 --> 1
+Floor:
+
+--------------------------------------------------------
 3.1 Experimental Studies
 
 Time Module: records and can return the relapsed time between the epoch time. 
     - time() takes a "time stamp" during the programs run time.
         - Not a perfect way to measure algorithm runtime, because the elapsed time depends on/is affected by what other processes are running on the computer when the test is performed.
-    - clock() measures thh number of CPU cycles that are used by an algorithm.
+    - clock() measures the number of CPU cycles that are used by an algorithm.
         - Depends on the CPU (hardware) of the user.
 
 TimeIt Module: can automate time evaluations with repetition to account for variance among trials. 
@@ -40,7 +43,7 @@ Wost Case Scenario: The slowest observed runtimes of the algorithm, used as the 
 
     b = base , most common base for CS is b=2 (binary)
     by convention for CS, log(n) = log_2(n) --> different from most calculators w/ log_10
-        - Example: log_3(n) = 27 --> 3^n = 27 --> How many times can we divide n by 3? 27
+        - Example: log_2(n) = 8 --> 2^n = 8 --> n = 3
 
 3. Linear Function: f(n) = n 
 
@@ -48,7 +51,7 @@ Wost Case Scenario: The slowest observed runtimes of the algorithm, used as the 
 
 4. N-Log-N Function: f(n) = nlog_2(n)
 
-    Function that assigns to an input n the value of n time the log_2(n). 
+    Function that assigns to an input n the value of n times the log_2(n). 
 
 
 
@@ -74,22 +77,73 @@ Geometric Sums
 
 3.3 Asymptotic Analysis (Growth Rate)
 
-    In Big O or Big Omega analysis, we’re concerned with how functions grow relative to each other as n becomes arbitrarily large.
+    In Big O or Big Omega analysis, we’re concerned with how functions grow relative to each other as n becomes arbitrarily large. ALGORITHM DEPENDENT!
 
 "Big-Oh" Notation: f(n) <= c * g(n), for n >= n_0 
 
-    Describes the upper bound or the 
+    Describes the upper bound or the "worst-case" time complexity scenario that the algorithm can/will perform at.
 
 "Big-Omega" Notation: f(n) >= c*g(n), for n >= n_0
 
-    Describes the lower bound or the minimum growth rate of a function. 
+   Descirbes the lower bound or the "best-case" time complexity scenario that the algorithm can/will perform at. 
 
 "Big-Theta" Notation: c'g(n) ≤ f(n) ≤ c''g(n), for n ≥ n_0
 
+Example: 
+
+    You have an algorithm, f(n), where you are trying to find a value in an unsorted list, n. 
+
+    Worst-Case Scenario: The worst case scenario that the algorithm, f(n) would encounter would be that the value desired is at the end of the list, meaning every value preceeding had to be evaluted. This has a time complexity of O(n). 
+
+    Best-Case Scenario: The best-case scenario that the algorithm, f(n), would encounter would be that the desired value is at the start of the list, meaning that only the first value was evaluated and returned. This has a time complexity of Big Omega(1) time, or constant time.
 
 
+3.4 Simple Justification Techniques
 
-array = [2,4,6,6,8]
+1. By Example 
+
+    "Every element x in set S that has property P." --> You can display or prove, "by example" that the statement is True by providing the elements and their desired property. 
+
+    Counterexample 
+
+    The counter this example, just prove that one element does NOT have the property in set S. 
+
+2. Contra Attack
+
+    Contrapositive
+
+    "Like looking through a negative mirror." Instead of "if p is true, the q is true," the contrapositive views it from the perspective of "if q is not true, then p is not true."
+
+    Contradiction
+
+    "q is true." to prove this statement, let's take the opposite angle and try to prove that "q is not true." If we can't find any situation which would prove this contradiction as true, we can assume our original statement is valid, "q is true."
+
+3. Induction
+
+    Statement: "The function f(n) is true for n>=1. 
+    
+    Step 1: First prove small values of n are true for f(n).
+        Example: n = 1, 2, 3, ..., k'
+
+    Step 2: Second prove that "large" values with respect to n, are true for f(n). It must also be true for n itself, this is the inductive step. 
+        Example: n = n, n - 1, n - 2, n - 3, ..., n - k''
+
+    Step 3: If both Step 1 & Step 2 are proven true, "then we’ve proven that the statement is true for all n (starting from where we began)". 
+    
+4. Loop Invariants
+
+    Condition or statement that remains true at specific points in a loop’s execution. To prove an algorithm works correctly using a loop invariant:
+	1.	Initial Condition (L₀): Show the invariant is true before the loop begins.
+	2.	Maintenance: Show that if the invariant is true before an iteration starts, it remains true after that iteration.
+	3.	Termination: Show that when the loop ends, the invariant implies the algorithm’s correctness.
+
+
+Logarithm/Exponential Properties
+
+1. a^log_b(x) = x
+    Example: 2^(log_2(n)) = n
+
+
 
 
 
