@@ -83,7 +83,7 @@ Geometric Sums
 
     Describes the upper bound or the "worst-case" time complexity scenario that the algorithm can/will perform at.
 
-"Big-Omega" Notation: f(n) >= c*g(n), for n >= n_0
+"Big-Omega" Notation: f(n) >= c * g(n), for n >= n_0
 
    Descirbes the lower bound or the "best-case" time complexity scenario that the algorithm can/will perform at. 
 
