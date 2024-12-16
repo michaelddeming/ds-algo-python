@@ -9,7 +9,9 @@ during execution, or by which a data structure relies upon smaller instances of 
 - Fractal: a shape that has a self-recursive structure at various levels of magnification.
 - 
 
-## 4.1: Illustrative Examples
+---
+
+## 4.1 & 4.2: Illustrative Examples and Analyzing Recursive Algorithms
 
 1. **Factorial Function**: (commonly denoted as n!) is a classic mathematical
 function that has a natural recursive definition.
@@ -73,6 +75,48 @@ us to efficiently locate a desired value in a data set with upwards of billions 
                         return binary_search(data, target, mid + 1, high)
         ```
 
-4. **File System**: a recursive structure in which directories
-can be nested arbitrarily deeply within other directories.
+4. **File System**: A recursive structure in which directories can be nested arbitrarily deeply within other directories.
+
+---
+
+## 4.3: Recursion Run Amok
+
+- **Infinite Recursion**: Occurs when a recursive call makes another recursive call without ever reaching a base case.
+    - Python has a built-in safety feature that caps the depth of recursion at approximately 1000. If exceeded, it raises a `RuntimeError`.
+    - Python's `sys` module allows dynamic reconfiguration of the recursion limit using the functions `getrecursionlimit` and `setrecursionlimit`.
+    - **Example**:
+
+      ```python
+      import sys
+      old = sys.getrecursionlimit()  # perhaps 1000 is typical
+      sys.setrecursionlimit(1000000)  # change to allow 1 million nested calls
+      ```
+
+---
+
+## 4.4: Further Examples of Recursion
+
+1. Linear Recursion: recursive call starts at most one other. 
+2. Binary Recursion: recursive call may start two others.
+3. Multiple Recursion: recursive call may start three or more others.
+
+---
+
+## 4.4: Further Examples of Recursion
+
+---
+
+## 4.5: Designing Recursive Algorithms
+
+1. Test for base cases:
+2. Recur: 
+    - Parameterizing a Recursion:
+
+---
+
+## 4.6: Eliminating Tail Recursion
+
+- **Tail Recursion**: the recursive call is the last operation in the function. In other words, the function returns the result of the recursive call directly, without any additional computation after it.
+
+
 
