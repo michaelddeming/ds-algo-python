@@ -9,6 +9,6 @@ def reverse(s: str) -> str:
     if n == 1:
         return s
     else:
-       return reverse(s[1:]) + s[-n]
+       return reverse(s[1:]) + s[-n] # or you can also "+ s[0]" instead of "+ s[-n]"
 
-print(reverse("abc"))
+print(reverse("pots&pans"))

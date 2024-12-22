@@ -6,7 +6,7 @@
 - str:
 - bit: The smallest unit of data, representing a binary value (0 or 1). 
 - byte: A group of 8 bits, which often represents a single character or a small amount of data.
-- memory address: A unique identifier for a location in a computer’s memory where data is stored. 
+- memory address: A unique identifier for a location in a computer's memory where data is stored. 
 - RAM: Random Access Memory
 - Array: A group of related variables, stored in continously in the computer's memory. 
 
@@ -42,7 +42,7 @@
 
 ## 5.3: Dynamic Arrays and Amortization
 
-- Dynamic Array: when a list is created in Python, it allocates a “dynamic array” in the system’s memory, reserving extra space to allow the list to grow as elements are appended. Once this extra space is fully used, Python requests the system to allocate a larger dynamic array. The existing elements are copied into the new array, and the old one is discarded, allowing the list to continue growing seamlessly.
+- Dynamic Array: when a list is created in Python, it allocates a “dynamic array” in the system's memory, reserving extra space to allow the list to grow as elements are appended. Once this extra space is fully used, Python requests the system to allocate a larger dynamic array. The existing elements are copied into the new array, and the old one is discarded, allowing the list to continue growing seamlessly.
     - Lists house references to the objects inside. The physical memory of the individual objects is not applied to the list's memory size. The objects are house elsewhere in memory. 
 
 - Amortization:
@@ -71,7 +71,45 @@ Methods:
 
 ---
 
-## 5.4: Efficiency of Python's Sequence Types
+## 5.5: Using Array-Based Sequences
+
+- Insertion-Sort Algorithm
+    ```python
+    def insertion_sort(A):
+        for k in range(1, len(A))
+
+        current_val = A[k]
+        j = k
+        while j > 0 and A[j-1] > current_val:
+            A[j] = A[j-1]
+            j -= 1
+        A[j] = current_val
+    ```
+
+---
+
+## 5.6: Multidimensional Data Sets
+
+    - Matrix: two-dimensional array.
+        - represented in Python as a list of lists, where each list is a new row in the matrix. 
+        - lists are 0 indexed so the first "row" and "column" in the matrix are index 0.
+        - Example: 
+                    22 18  709  5   33
+                    45 32  830 120 750
+                    4  880  45  66  61
+                
+            data = [[22, 18, 709, 5, 33], [45, 32, 830, 120, 750], [4, 880, 45, 66, 61]]
+
+            data[row][column]
+            data[1][0] = 45
+            data[2][2] = 830
+        - Initialize a 2-dimensional list:
+
+            data = [[0] * c for j in range(r)]
+
+                
+
+
 
 
 
