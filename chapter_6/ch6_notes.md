@@ -24,4 +24,23 @@
         - .push(), .pop() are amoritied O(1) time because of the possible dynamic array re-sizing underneath which takes O(n). 
         - Space usage for a stack is O(n).
 
+---
+
+## 6.2: Queues
+
+- Queue: a collection of objects that are inserted and removed according to the first-in, first-out (FIFO) principle.
+    
+    - Examples:
+        1. 
+        2. 
+    
+    - Queues are Abstract Data Types (ADTs) and support the following:
+        1. Q.enqueue(e): Add element e to the back of the queue Q.
+        2. Q.dequeue(): Remove and return the first element from queue Q; an error occurs if the queue is empty. 
+        3. Q.first(): Return a reference to the element at the front of the queue Q, without removing it; an error occurs if the queue is empty. 
+        4. Q.is_empty(): Return True if queue Q does not contain any elements. 
+        5. len(Q): Return the number of elements in the queue Q; in Python, we implement this with the special method ```__len__```.
+
+        
+
 
