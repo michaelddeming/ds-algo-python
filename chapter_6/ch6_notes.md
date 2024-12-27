@@ -21,8 +21,8 @@
 
     - Stack Running Times:
         - .top(), .is_empty(), and len() use constant time in the worst case, O(1).
-        - .push(), .pop() are amoritied O(1) time because of the possible dynamic array re-sizing underneath which takes O(n). 
-        - Space usage for a stack is O(n).
+        - .push(), .pop() are amoritized O(1) time because of the possible dynamic array re-sizing underneath which takes O(n). 
+        - Space usage for a stack is O(n). 
 
 ---
 
@@ -40,6 +40,37 @@
         3. Q.first(): Return a reference to the element at the front of the queue Q, without removing it; an error occurs if the queue is empty. 
         4. Q.is_empty(): Return True if queue Q does not contain any elements. 
         5. len(Q): Return the number of elements in the queue Q; in Python, we implement this with the special method ```__len__```.
+
+---
+
+## 6.3: Double-Ended Queues aka Deque ("Deck")
+
+- Deque: a queue-like data structure that supports insertion and deletion at both the front and the back of the queue. 
+    
+    - Examples:
+        1. 
+        2. 
+    
+    - The deque ADT is defined so that deque D supports the following methods:
+        1. D.add_first(e): Add element e to the front of the deque D.
+        2. D.add_last(e): Add element e to the back of the deque D.
+        3. D.delete_first(): Remove and return the first element from the deque D; an error occurs if the deque is empty.
+        4. D.delete_last(): Remove and return the last element from the deque D; an error occurs if teh deque is empty.
+        --> Additionally, the deque ADT will include the following accessors:
+        5. D.frist(): Return (but do not remove) the first element of the deque D; an error occurs if the duque is empty. 
+        6. D.last(): Return (but do not remove) the last element of the deque D; an error occurs if the duque is empty. 
+        7. D.is_empty(): Return True if the deque D does not contain any elements.
+        8. len(D): Return the number of elements in deque D; in Python, we implemenet this with the special method ```__len__```.
+
+        
+
+
+
+
+
+
+
+
 
         
 
