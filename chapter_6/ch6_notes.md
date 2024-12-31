@@ -1,7 +1,5 @@
 # Chapter 6: Stacks, Queues, and Deques (Decks)
 
-### Definitions
-
 ---
 
 ## 6.1: Stacks
