@@ -54,6 +54,50 @@
 
 ## 7.4: The Positional List ADT
 
+- Positional List ADT: a list-like data structure that allows elements to be accessed, inserted, or removed based on their "position" while maintaining relationships between adjacent elements/nodes.
+
+    - Examples:
+    1. Cursor in a text document.
+    2. Cutting in line or queue.
+
+    - Indexs vs Positions: Positions are abstract markers or references to elements in the list. They do not correspond to fixed numeric values. Indicies are number and correspond to teh absolute position of an element. 
+        - Position --> bookmark in a book
+        - Index --> page number of a book
+
+    - Position instances are simple objects that support the following method:
+        1. p.element(): Return the element stored at position p. 
+
+    - A Positional List, L, supports the following methods:
+        1. L.first(): Return the position of the first element of L, or None if L is empty.
+        2. L.last(): Return the position of the last element of L, or None if L is empty.
+        3. L.before(p): Return the position of L immediately before position p, or None
+        if p is the first position.
+        4. L.after(p): Return the position of L immediately after position p, or None if
+        p is the last position.
+        5. L.is_empty(): Return True if list L does not contain any elements.
+        6. len(L): Return the number of elements in the list.
+        7. iter(L): Return a forward iterator for the elements of the list. See Sec-
+        tion 1.8 for discussion of iterators in Python.
+    
+    - The positional list ADT also includes the following update methods:
+        1. L.add_first(e): Insert a new element e at the front of L, returning the      position of the new element.
+        2. L.add_last(e): Insert a new element e at the back of L, returning the position
+        of the new element.
+        3. L.add before(p, e): Insert a new element e just before position p in L, returning
+        the position of the new element.
+        4. L.add_after(p, e): Insert a new element e just after position p in L, returning
+        the position of the new element.
+        5. L.replace(p, e): Replace the element at position p with element e, returning
+        the element formerly at position p.
+        6. L.delete(p): Remove and return the element at position p in L, invalidat-
+        ing the position.
+
+
+
+---
+
+## 7.5: Sorting a Positional List.
+
 - 
 
 
