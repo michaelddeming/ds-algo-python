@@ -29,7 +29,7 @@ function that has a natural recursive definition.
                 return n * factorial(n - 1)
         ```
         
-        ![A recursion trace for the call factorial(5)](/chapter_4/recursion_trace.jpg)
+        <img alt="A recursion trace for the call factorial(5)" src="./recursion_trace.jpg" width="350"/>
 
 2. **English Ruler**: a recursive pattern that is a simple example of a 
 structure.
