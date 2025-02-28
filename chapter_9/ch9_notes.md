@@ -53,4 +53,39 @@
     ![alt text](image.png)
     ![alt text](image-1.png)
 
+- Bottom-Up Heap Construction
+
+--
+
+# 9.4: Sorting with a Priority Queue
+
+- Irreflexive Property: A relation is irreflexive if nothing in the set is related to itself.
+    - Example: "Is taller than" -> no one can be taller than themselves. 
+        - Set(Nuggs, Jasch, Michael)
+            - Jasch is taller than Nuggs, Michael is taller than Jasch, but no one is taller than themselves. 
+- Transistive Property: A relation is transitive if, whenever one thing is related to a second, and the second is related to a third, then the first is also related to the third. 
+    - Example: "Is taller than" -> Height can be ordered. 
+        - Set(Nuggs, Jasch, Michael)
+            - Jasch is taller than Nuggs, Michael is taller than Jasch, thus Michael is taller than Nuggs.
+
+- Strict Weak Order: A way to compare things where no item is compared to itself, the order is consistent (if A > B and B > C, then A > C), and not everything has to be comparable.
+    - Example: Sorting people by height —> some people's heights might be unknown, but the order still makes sense for those you can compare.
+    
+# 9.5: Adaptable Priority Queues
+
+- Adaptable Priority Queues:
+    - APQs support these additonal methods:
+        - P.update(loc, k, v): Replace the key and value of the associated locator with the newly provided k for key and v for value.
+        - P.remove(loc): Remove the element identified by the locator `loc`from the PQ and return its (key, value) pai
+
+- Locators: To keep track of positions or places within the PQ, when an element is added to the queue we can return a locator value that will be required to pass into the new PQ.update() and PQ.remove() methods.
+    - Example:
+    ![alt text](image-2.png)
+        
+- Running Time of Adaptable Priority Queue Operations:
+![alt text](image-3.png)
+
+
+
+
 
