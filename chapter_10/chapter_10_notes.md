@@ -99,7 +99,56 @@
 
 
 
+- Open Addressing: A way to handle collisions in a hash table, where instead of storing multiple values in the same bucket (chaining), values instead find an empty bucket if the initial one is already occupied. 
+    1. Linear Probing: If trying to insert an item (k, v) with a hash code of j, where `j = h(k)`, and that bucket is already occupied, then we try to insert the item at `A[(j + 1) % N]`. If that is also occupied, continue increasing the numerical addition for each attempt. 
+        - Cons: 
+            1. Contiguous Clustering: Since linear probing searches sequentially through adjacent buckets, items tend to form clusters, increasing the likelihood of collisions and slows down alogs.  
+    2. Quadratic Probing: If trying to insert an item(k, v) with a hash code of j, where `j = h(k)`, and that bucket is already occupied, then we try to insert the item at `A[(j + 1^2) % N]`. If that bucket is already occupied, continue increasing the numerical addition, being squared, for each probe attempt.
+        - If `N` (number of buckets in the hashmap) is prime, and the maps is less than half full, you are guaranteed to find an empty slot.
+        - Cons:
+            1. Secondary Clustering: Keys that share a similar quadratic pattern will bunch up.
+    3. Double Hashing: Instead of just adding +1 or +i², you introduce a secondary hash function `h′(k)` to mix things up and avoid clustering:
+	    - First hash gives you: `h(k)`
+	    - If `h(k)` is occupied, try: `A[(h(k) + i * h′(k)) mod N]` where:
+            - `i` = number of attempts.
+            - `h′(k)` = secondary hash function.
+            - `h′(k)` needs to be non-zero (so you don’t get stuck retrying the same spot).
+        - Common `h′(k)` Function: `h′(k) = q - (k mod q)`
+            - `q` = some prime number < N (number of buckets in the array).
+            - Makes sure that `h′(k)` is **not zero** and provides a good spread of values.
+            - Prime numbers reduce the changes of repeating patterns, helping avoid clustering.  
+        
 
+- Load Factor in Separate Chaining vs. Open Addressing
+    - With separate chaining, as the load factor approaches 1, the probability of a collision greatly increases. As a result, we revert the linear-based time methods to "chain" the collisions together within the bucket. 
+    - With Open Addressing, as the load factor grows beyond 0.5 and approaches 1, clusters start to grow. 
+        - Recommended to maintain a load factor < 0.5.
 
+- Rehashing: When a load factor grows beyond the desired threshold, a *rehashing* should take place. 
+    - Double the size of the current hashmap.
+    - Create a new compression function to account for new increase `N`, number of buckets.
+    - Using the previous element hashcodes, rehash the elements into the new hashmap. 
 
+- Efficiency of Hash Tables:
 
+![alt text](image-5.png)
+
+# 10.3 Sorted Maps
+
+- Exact Search: Looking up a specific key to retrieve its corresponding value. The key is hashed using a hash function, which maps it to an index in the table, allowing for O(1) average time complexity for retrieval. 
+
+- Sorted Map ADT:
+    - Methods:
+        1. Map.find_min(): Return the (key,value) pair with minimum key (or None, if map is empty).
+        2. Map.find_max(): Return the (key,value) pair with maximum key (or None, if map is empty).
+        3. Map.find_lt(k): Return the (key, value) pair with the greatest key that is strictly less than k (or None, if no such item exists).
+        4. Map.find_le(k): Return the (key, value) pair with the greatest key that is  less than or equal to k (or None, if no such item exists).
+        5. Map.find_gt(k): Return the (key, value) pair with the least key that is strictly greater than k (or None, if no such item exists).
+        6. Map.find_ge(k): Return the (key, value) pair with the least key taht is greater than or equal to k (or None, if no such item exists).
+        7. Map.find_range(start, stop): Iterate all (key, value) pairs with start <= key < stop. If start is None, iteration begins with minimum key; if stop is None, iteration concludes with maximum key.
+        8. iter(Map): Iterate all keys of the map according to their natural order, from smallest to largest. 
+        9. reversed(Map): Iterate all keys of the map in reverse order; in Python this is implemented with the `__reversed__` method. 
+
+- Sorted tables are primarily used in situations where we expect many searches but relatively few updates.
+
+![alt text](image-6.png)
