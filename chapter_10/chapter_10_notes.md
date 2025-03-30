@@ -152,3 +152,19 @@
 - Sorted tables are primarily used in situations where we expect many searches but relatively few updates.
 
 ![alt text](image-6.png)
+
+
+# 10.4 Skip Lists
+
+- Skip List: A data structure that allows fast search, insertion, and deletion operations by using multiple linked lists with different levels of “skipping” over elements.
+    - For each sub-list in the Skip List, has about n/(2^i) items, where `i` is the sub-list index within the Skip List.
+
+![alt text](image-7.png)
+
+
+- Pseudorandom Number Generators: Functions that generates a *random* sequence of numbers starting from a **seed** value. These numbers aren't truly *random* as starting with the same **seed** value results in the same random numbers. 
+
+
+
+
+
