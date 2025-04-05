@@ -165,6 +165,27 @@
 - Pseudorandom Number Generators: Functions that generates a *random* sequence of numbers starting from a **seed** value. These numbers aren't truly *random* as starting with the same **seed** value results in the same random numbers. 
 
 
+# 10.5 Sets, Multisets, and Multimaps
 
+- `set`: An unordered collection of elements, without duplicates, that typically supports efficient membership tests.
+    - Similar to keys in a map, without values. 
 
+- `multiset` (*bag*): A set-like container that allows duplicates.
 
+- `multimap`: Similar to a traditional map, but the same key can be mapped to multiple values.
+
+- `frozenset`: An immutable form of a `set`.
+
+- Fundamental Behaviors of Sets:
+    1. S.add(e): Add element e to the set. This has no effect if the set already contains e.
+    2. S.discard(e): Remove element e from the set, if present. This has no effect if the set does not contain e. 
+    3. e in S: Return True if the set contains element e. In Python, this is implemented with the special `__contains__` method. 
+    4. len(S): Return the number of elements in set S. In Python, this is implemented with the special method `__len__`.
+    5. iter(S): Generate an iteration of all elements of the set. In Python, this is implemented with the special method `__iter__`. 
+
+- Additional Methods of Sets:
+    1. S.remove(e): Remove element e from the set. If the set does not contain e, raise a KeyError.
+    2. S.pop(): Remove and return an arbitrary element from the set. If the set is empty, raise KeyError.
+    3. S.clear(): Remove all elements from the set.
+
+![alt text](image-8.png)
